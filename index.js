@@ -26,5 +26,5 @@ app.use(pleasureApi({
 }, server))
 
 getEntities().then(() => {
-  process.send && process.send('ready')
+  process.send && process.send('pleasure-ready')
 })
