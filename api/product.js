@@ -33,13 +33,13 @@ module.exports = {
   },
   flux: {
     access: {
-      create (/* entry */) {
+      create (/* { entry } */) {
         return true
       },
-      update (/* entry */) {
+      update (/* { entry } */) {
         return true
       },
-      delete (/* entry */) {
+      delete (/* { entry } */) {
         return true
       }
     },
