@@ -59,6 +59,13 @@ module.exports = {
     list ({ user }) {
       // only admins can list users
       return user && user.level === 'admin'
+    },
+    async read ({ isNew, user, id }) {
+      if ((user && user.level === 'admin') || (!user && isNew)) {
+        return true
+      }
+
+      return user && user._id === id
     }
   },
   flux: {

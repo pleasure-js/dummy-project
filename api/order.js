@@ -55,6 +55,25 @@ module.exports = {
     }
   },
   access: {
+    async read ({ entry, user }) {
+      // un-authenticated users can not list orders
+      if (!user) {
+        return false
+      }
+
+      // if is an admin, list all orders
+      if (user.level === 'admin') {
+        return true
+      }
+
+      const theEntry = await entry()
+
+      if (!theEntry || !theEntry.user) {
+        return false
+      }
+
+      return theEntry.user._id === user._id
+    },
     create ({ user, appendEntry }) {
       if (!user) {
         return false
@@ -76,7 +95,7 @@ module.exports = {
       }
 
       // list only current user's orders
-      queryFilter.push(doc => {
+      queryFilter(doc => {
         // use mongoose query object
         return doc.find({ user: user._id })
       })

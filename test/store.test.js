@@ -1,6 +1,6 @@
 import test from 'ava'
 import './tools/web-server.js'
-import { pleasureClient } from '../../../' // pleasure
+import { pleasureClient } from 'pleasure' // pleasure
 import _ from 'lodash'
 
 let dummyUser
@@ -91,7 +91,7 @@ test(`Users can create orders`, async t => {
   })
 })
 
-test(`Users can only list their own orders`, async t => {
+test.only(`Users can only list their own orders`, async t => {
   await pleasureClient.create('user', sampleUser)
   await pleasureClient.create('user', sampleUser2)
 
