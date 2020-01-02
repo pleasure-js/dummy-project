@@ -1,12 +1,12 @@
 {
-  "dev": false,
+  "dev": true,
   "srcDir": "/Users/tin/projects/pleasure-suite-builder/packages/api/test/fixtures/pleasure-dummy-project/client",
   "vue": {
     "config": {
-      "productionTip": false,
-      "devtools": false,
-      "silent": true,
-      "performance": false
+      "productionTip": true,
+      "devtools": true,
+      "silent": false,
+      "performance": true
     }
   },
   "modules": [
@@ -38,7 +38,7 @@
             },
             "entitiesPath": "api",
             "entitiesUri": "/schemas",
-            "debug": false
+            "debug": true
           }
         },
         "pleasureRoot": "/Users/tin/projects/pleasure-suite-builder/packages/api/test/fixtures/pleasure-dummy-project"

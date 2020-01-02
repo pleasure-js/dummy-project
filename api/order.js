@@ -15,18 +15,17 @@ module.exports = {
   model: {
     schema: {
       products: {
-        type: [ProductOrderSchema],
-        default () {
-          return []
-        }
+        type: [new Schema(ProductOrderSchema)]
       },
       user: {
         type: ObjectId,
-        ref: 'user'
+        ref: 'user',
+        index: true
       },
       created: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        index: true
       }
     },
     schemaCreated (schema) {
@@ -52,10 +51,14 @@ module.exports = {
     },
     justAString: {
       schema: {
-        name: String
+        name: {
+          type: String,
+          required: true
+        }
       },
-      async handler () {
-
+      async handler (what) {
+        console.log({ what })
+        return 'string'
       }
     }
   },
@@ -88,6 +91,9 @@ module.exports = {
       })
 
       return true
+    },
+    schema ({ user }) {
+      return user && user.level === 'admin'
     }
   }
 }

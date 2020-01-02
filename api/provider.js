@@ -2,7 +2,10 @@ module.exports = {
   discriminator: 'user',
   model: {
     schema: {
-      companyName: String
+      companyName: {
+        type: String,
+        index: true
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import test from 'ava'
 import './tools/web-server.js'
-import { pleasureClient } from '../../../' // pleasure
+import { instance as pleasureClient } from '@pleasure-js/api-client' // pleasure
 import _ from 'lodash'
 
 let dummyUser
