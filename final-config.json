@@ -1,0 +1,58 @@
+{
+  "dev": false,
+  "srcDir": "/Users/tin/projects/pleasure-suite-builder/packages/api/test/fixtures/pleasure-dummy-project/client",
+  "vue": {
+    "config": {
+      "productionTip": false,
+      "devtools": false,
+      "silent": true,
+      "performance": false
+    }
+  },
+  "modules": [
+    [
+      "@pleasure-js/ui-nuxt",
+      {
+        "root": "/Users/tin/projects/pleasure-suite-builder/packages/api/test/fixtures/pleasure-dummy-project",
+        "name": "@pleasure-js/dummy-project",
+        "config": {
+          "api": {
+            "prefix": "/api",
+            "port": 3000,
+            "collectionListLimit": 100,
+            "collectionMaxListLimit": 300,
+            "createEntityTimeout": 3000,
+            "mongodb": {
+              "host": "localhost",
+              "port": 27017,
+              "database": "pleasure-js-dummy-project",
+              "username": null,
+              "password": null,
+              "driverOptions": {
+                "autoIndex": true,
+                "reconnectTries": 1.7976931348623157e+308,
+                "reconnectInterval": 500,
+                "poolSize": 5,
+                "useNewUrlParser": true
+              }
+            },
+            "entitiesPath": "api",
+            "entitiesUri": "/schemas",
+            "debug": false
+          }
+        },
+        "pleasureRoot": "/Users/tin/projects/pleasure-suite-builder/packages/api/test/fixtures/pleasure-dummy-project"
+      }
+    ]
+  ],
+  "modulesDir": [
+    "/Users/tin/projects/pleasure-suite-builder/packages/cli/cli/node_modules",
+    "/Users/tin/projects/pleasure-suite-builder/packages/cli/node_modules",
+    "/Users/tin/projects/pleasure-suite-builder/packages/node_modules",
+    "/Users/tin/projects/pleasure-suite-builder/node_modules",
+    "/Users/tin/projects/node_modules",
+    "/Users/tin/node_modules",
+    "/Users/node_modules",
+    "/node_modules"
+  ]
+}

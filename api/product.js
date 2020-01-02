@@ -31,6 +31,7 @@ module.exports = {
       return user && user.level === 'admin'
     }
   },
+  // provided by api-plugin-flux
   flux: {
     access: {
       create (/* { entry } */) {

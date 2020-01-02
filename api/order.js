@@ -11,6 +11,7 @@ const ProductOrderSchema = Object.assign({}, omit(ProductSchema, ['stock']), {
 })
 
 module.exports = {
+  // provided by api-plugin-stateful
   model: {
     schema: {
       products: {
@@ -36,6 +37,7 @@ module.exports = {
       })
     }
   },
+  // provided out of the box
   controller: {
     // [POST] > http://myproject/api/order/retrieve-new
     async retrieveNew (payload) {
@@ -48,12 +50,16 @@ module.exports = {
       // { params, post, user, ctx } = payload
       return ['array']
     },
-    async justAString () {
-      // all logic is in your control
-      // { params, post, user, ctx } = payload
-      return 'string'
+    justAString: {
+      schema: {
+        name: String
+      },
+      async handler () {
+
+      }
     }
   },
+  // provided by api-plugin-stateful
   access: {
     create ({ user, appendEntry }) {
       if (!user) {

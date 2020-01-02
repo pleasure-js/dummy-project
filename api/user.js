@@ -1,6 +1,7 @@
 const md5 = require('md5')
 
 module.exports = {
+  // api-plugin-stateful
   model: {
     schema: {
       fullName: {
@@ -45,6 +46,7 @@ module.exports = {
       }
     }
   },
+  // api-plugin-stateful
   access: {
     create ({ user }) {
       const access = ['_id', 'fullName', 'email', 'password']
@@ -61,6 +63,7 @@ module.exports = {
       return user && user.level === 'admin'
     }
   },
+  // api-plugin-flux
   flux: {
     access: {
       create () {

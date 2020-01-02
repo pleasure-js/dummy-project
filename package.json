@@ -1,5 +1,5 @@
 {
-  "name": "pleasure-dummy-project",
+  "name": "@pleasure-js/dummy-project",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -16,8 +16,7 @@
     "lodash": "^4.17.11",
     "md5": "^2.2.1",
     "mongoose": "^5.4.19",
-    "nuxt": "^2.6.2",
-    "pleasure": "keepwondering/pleasure#v1-beta"
+    "nuxt": "^2.6.2"
   },
   "devDependencies": {
     "ava": "^1.4.1"
